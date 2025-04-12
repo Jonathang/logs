@@ -10,6 +10,7 @@ Api para personalizar la estructura de los logs con log4j
 ## 📜 LOGS
 ## 1. Contenedor que guarda los logs
 
+![logs_personalizados](https://github.com/user-attachments/assets/c239caad-03ba-49d6-9685-8f4d4eb3ee8f)
 
 ## 2. Dependencia
 ```xml
