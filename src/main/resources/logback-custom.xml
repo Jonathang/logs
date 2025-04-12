@@ -34,7 +34,9 @@
                 </threadName>
 
                 <!-- Mensaje principal -->
-                <message/>
+                <message>
+                    <fieldName>mensaje</fieldName>
+                </message>
                 <!-- Campos personalizados -->
                 <arguments>
                     <includeNonStructuredArguments>false</includeNonStructuredArguments>
@@ -89,7 +91,9 @@
                 </threadName>
 
                 <!-- Mensaje principal -->
-                <message/>
+                <message>
+                    <fieldName>mensaje</fieldName>
+                </message>
                 <!-- Campos personalizados -->
                 <arguments>
                     <includeNonStructuredArguments>false</includeNonStructuredArguments>
