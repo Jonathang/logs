@@ -1,0 +1,5 @@
+com\logs\jon\logs\service\LogService.class
+com\logs\jon\logs\model\CustomLog.class
+com\logs\jon\logs\model\CustomLog$CustomLogBuilder.class
+com\logs\jon\logs\MyCustomFormat.class
+com\logs\jon\logs\Application.class

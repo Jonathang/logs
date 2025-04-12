@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: Logs
+  jackson:
+    time-zone: America/Mexico_City
+
+logging:
+  config: classpath:logback-custom.xml
+  file:
+    name: logs/contenedor.log
+    path: logs/
+  structured:
+    format:
+      console:
+        enabled: true
+        style: JSON
+        json:
+          pretty-print: false
+          include:
+            timestamp:
+              field-name: "@timestamp"
+              time-zone: UTC
+            level:
+              field-name: "severity"
+            stack-trace: true
+            mdc: true # Incluye el Mapped Diagnostic Context
+          exclude:
+            - version
+            - level-value
+          custom-fields:
+            app.name: "${spring.application.name}"
+            app.version: "${app.version:-1.0.0}"
+            environment: "${spring.profiles.active:-local}"

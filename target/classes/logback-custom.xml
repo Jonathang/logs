@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Propiedades -->
+    <property name="LOG_DIR" value="logs"/>
+    <property name="LOG_FILE" value="${LOG_DIR}/contenedor.log"/>
+    <property name="LOG_PATTERN" value="%msg%n"/>
+    <!-- Configuración específica para CDMX -->
+    <property name="MEXICO_TIMEZONE" value="America/Mexico_City"/>
+
+    <!-- Appender para CONSOLA (JSON compacto) -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <!-- Timestamp con formato personalizado -->
+                <timestamp>
+                    <timeZone>${MEXICO_TIMEZONE}</timeZone>
+                    <pattern>yyyy-MM-dd/HH:mm:ss</pattern>
+                    <fieldName>Fecha</fieldName>
+                </timestamp>
+
+                <!-- Nivel de log -->
+                <logLevel>
+                    <fieldName>Nivel</fieldName>
+                </logLevel>
+
+                <!-- Nombre del logger -->
+                <loggerName>
+                    <fieldName>Clase</fieldName>
+                </loggerName>
+
+                <!-- Nombre del thread -->
+                <threadName>
+                    <fieldName>Metodo</fieldName>
+                </threadName>
+
+                <!-- Mensaje principal -->
+                <message/>
+                <!-- Campos personalizados -->
+                <arguments>
+                    <includeNonStructuredArguments>false</includeNonStructuredArguments>
+                </arguments>
+
+                <!-- Stack trace para errores -->
+                <stackTrace>
+                    <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter"/>
+                </stackTrace>
+            </providers>
+
+            <!-- Campos adicionales fijos -->
+            <customFields>{"timezone":"${MEXICO_TIMEZONE}"}</customFields>
+
+            <!-- Configuración general -->
+            <includeContext>false</includeContext>
+            <prettyPrint>false</prettyPrint>
+
+        </encoder>
+    </appender>
+
+    <!-- Appender para ARCHIVO (JSON) -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <!-- Timestamp con formato personalizado -->
+                <timestamp>
+                    <timeZone>${MEXICO_TIMEZONE}</timeZone>
+                    <pattern>yyyy-MM-dd/HH:mm:ss</pattern>
+                    <fieldName>Fecha</fieldName>
+                </timestamp>
+
+                <!-- Nivel de log -->
+                <logLevel>
+                    <fieldName>Nivel</fieldName>
+                </logLevel>
+
+                <!-- Nombre del logger -->
+                <loggerName>
+                    <fieldName>Clase</fieldName>
+                </loggerName>
+
+                <!-- Nombre del thread -->
+                <threadName>
+                    <fieldName>Metodo</fieldName>
+                </threadName>
+
+                <!-- Mensaje principal -->
+                <message/>
+                <!-- Campos personalizados -->
+                <arguments>
+                    <includeNonStructuredArguments>false</includeNonStructuredArguments>
+                </arguments>
+
+                <!-- Stack trace para errores -->
+                <stackTrace>
+                    <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter"/>
+                </stackTrace>
+            </providers>
+
+            <!-- Campos adicionales fijos -->
+            <customFields>{"timezone":"${MEXICO_TIMEZONE}"}</customFields>
+
+            <!-- Configuración general -->
+            <includeContext>false</includeContext>
+            <prettyPrint>false</prettyPrint>
+        </encoder>
+    </appender>
+
+    <!-- Logger raíz -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>
