@@ -3,3 +3,8 @@
 {"Fecha":"2025-04-11/19:17:58","Nivel":"INFO","Clase":"com.logs.jon.logs.Application","Metodo":"main","message":"Started Application in 0.922 seconds (process running for 1.218)"}
 {"Fecha":"2025-04-11/19:17:58","Nivel":"INFO","Clase":"com.logs.jon.logs.Application","Metodo":"main","message":"LOG DE PRUEBA"}
 {"Fecha":"2025-04-11/19:17:58","Nivel":"ERROR","Clase":"com.logs.jon.logs.Application","Metodo":"main","message":"Ocurrió un error en el sistema"}
+{"Fecha":"2025-04-11/19:36:37","Nivel":"INFO","Clase":"com.logs.jon.logs.Application","Metodo":"main","message":"Starting Application using Java 17.0.7 with PID 18216 (D:\\DocumentosD\\Workspace\\logs\\target\\classes started by jgarc in D:\\DocumentosD\\Workspace\\logs)"}
+{"Fecha":"2025-04-11/19:36:37","Nivel":"INFO","Clase":"com.logs.jon.logs.Application","Metodo":"main","message":"No active profile set, falling back to 1 default profile: \"default\""}
+{"Fecha":"2025-04-11/19:36:37","Nivel":"INFO","Clase":"com.logs.jon.logs.Application","Metodo":"main","message":"Started Application in 0.947 seconds (process running for 1.224)"}
+{"Fecha":"2025-04-11/19:36:37","Nivel":"INFO","Clase":"com.logs.jon.logs.Application","Metodo":"main","message":"LOG DE PRUEBA"}
+{"Fecha":"2025-04-11/19:36:37","Nivel":"ERROR","Clase":"com.logs.jon.logs.Application","Metodo":"main","message":"Ocurrió un error en el sistema"}

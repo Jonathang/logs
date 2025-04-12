@@ -31,12 +31,6 @@
 			<artifactId>logstash-logback-encoder</artifactId>
 			<version>8.1</version>
 		</dependency>
-		<!-- LOMBOK -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
 		<!-- ZONA HORARIA -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -50,14 +44,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<annotationProcessorPaths>
-						<path>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</path>
-					</annotationProcessorPaths>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
